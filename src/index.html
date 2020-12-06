@@ -2,62 +2,152 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doraemon</title>
-    <link rel="stylesheet" href="./style.less" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+      }
+      *::after {
+        box-sizing: border-box;
+      }
+      *::before {
+        box-sizing: border-box;
+      }
+      @keyframes flying {
+        0% {
+          margin-top: 100px;
+        }
+        50% {
+          margin-top: 10px;
+        }
+        75% {
+          margin-top: 50px;
+        }
+        100% {
+          margin-top: 100px;
+        }
+      }
+      @keyframes twsiting {
+        0% {
+          transform: rotate3D(0, 1, 0, 0deg);
+        }
+        100% {
+          transform: rotate3D(0, 1, 0, 360deg);
+        }
+      }
+      .bg {
+        background-color: #d4ecf9;
+        width: 100%;
+        height: 100vh;
+      }
+      .bg .head {
+        width: 100%;
+        text-align: center;
+      }
+      #html {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 50vh;
+      }
+      #demo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        border: 1px solid red;
+        overflow-y: auto;
+      }
+      #demo::-webkit-scrollbar {
+        display: none;
+      }
+      #demo2 {
+        display: none;
+      }
+      #button {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+      #button > button {
+        margin-bottom: 10px;
+        padding: 4px 8px;
+      }
+    </style>
   </head>
   <body>
-    <div class="bg">
-      <div class="head">Doraemon</div>
-      <div class="main">
-        <div class="Take-copter">
-          <div class="copter-g"></div>
-          <div class="copter-j"></div>
-          <div class="copter-t"></div>
-        </div>
-        <div class="face">
-          <div class="facew">
-            <div class="eyel">
-              <div class="eyeinner"></div>
-            </div>
-            <div class="eyer"></div>
-            <div class="nose"></div>
-            <div class="middle"></div>
-            <div class="mouth">
-              <div class="tongue">
-                <div class="tonguel tongueCommon"></div>
-                <div class="tonguer tongueCommon"></div>
-                <div class="tonguem tongueCommon"></div>
+    <div id="demo"></div>
+    <div id="button">
+      <button id="btnPause">暂停</button>
+      <button id="btnPlay">播放</button>
+      <button id="btnSlow">慢速</button>
+      <button id="btnNormal">中速</button>
+      <button id="btnFast">快速</button>
+    </div>
+    <style id="demo2"></style>
+    <div id="html">
+      <div class="bg">
+        <div class="head">Doraemon</div>
+        <div class="main">
+          <div class="Take-copter">
+            <div class="copter-g"></div>
+            <div class="copter-j"></div>
+            <div class="copter-t"></div>
+          </div>
+          <div class="face">
+            <div class="facew">
+              <div class="eyel">
+                <div class="eyeinner"></div>
               </div>
+              <div class="eyer"></div>
+              <div class="nose"></div>
+              <div class="middle"></div>
+              <div class="mouth">
+                <div class="tongue">
+                  <div class="tonguel tongueCommon"></div>
+                  <div class="tonguer tongueCommon"></div>
+                  <div class="tonguem tongueCommon"></div>
+                </div>
+              </div>
+              <div class="common beard1"></div>
+              <div class="common beard2"></div>
+              <div class="common beard3"></div>
+              <div class="common beard4"></div>
+              <div class="common beard5"></div>
+              <div class="common beard6"></div>
             </div>
-            <div class="common beard1"></div>
-            <div class="common beard2"></div>
-            <div class="common beard3"></div>
-            <div class="common beard4"></div>
-            <div class="common beard5"></div>
-            <div class="common beard6"></div>
           </div>
-        </div>
-        <div class="handl handCommon">
-          <div class="handql"></div>
-        </div>
-        <div class="handr handCommon">
-          <div class="handqr"></div>
-        </div>
-        <div class="body">
-          <div class="scaff"></div>
-          <div class="bell">
-            <div class="bellinner1"></div>
-            <div class="bellinner2"></div>
+          <div class="handl handCommon">
+            <div class="handql"></div>
           </div>
-          <div class="belly">
-            <div class="pocket"></div>
+          <div class="handr handCommon">
+            <div class="handqr"></div>
           </div>
+          <div class="body">
+            <div class="scaff"></div>
+            <div class="bell">
+              <div class="bellinner1"></div>
+              <div class="bellinner2"></div>
+            </div>
+            <div class="belly">
+              <div class="pocket"></div>
+            </div>
+          </div>
+          <div class="footl footCommon"></div>
+          <div class="footr footCommon"></div>
         </div>
-        <div class="footl footCommon"></div>
-        <div class="footr footCommon"></div>
       </div>
     </div>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
